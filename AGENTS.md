@@ -16,7 +16,7 @@ Frostfall est un gestionnaire de bibliothèque Steam minimaliste, sécurisé et 
 ## 3. User Stories (Backlog)
 
 ### Phase 1 : Initialisation & Environnement
-- [ ] **US 1.1** : En tant qu'utilisateur, je veux que le programme vérifie automatiquement si `steamcmd` est installé pour éviter les erreurs de lancement.
+- [ ] **US 1.1** : En tant qu'utilisateur, je veux que le programme vérifie automatiquement si `steamcmd` et 'steam' sont installés pour éviter les erreurs de lancement.
 - [ ] **US 1.2** : En tant qu'utilisateur, je veux que le programme vérifie si le répertoire de destination est accessible en écriture.
 - [ ] **US 1.3** : En tant qu'utilisateur, je veux que le programme valide la connectivité avec les serveurs Steam.
 
