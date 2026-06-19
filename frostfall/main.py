@@ -1,2 +1,6 @@
+from frostfall import validator
+
+
 def main():
-    print("Hello world.")
+    is_installed = validator.dependencies()
+    print(is_installed)
