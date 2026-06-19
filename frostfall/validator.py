@@ -1,9 +1,9 @@
-import shutil
+import shutil, pathlib, os, requests
 
 
-def dependencies():
-    steam_client = shutil.which("steam")
-    steam_cmd = shutil.which("steamcmd")
+def check_dependencies():
+    steam_client = True if shutil.which("steam") else False
+    steam_cmd = True if shutil.which("steamcmd") else False
     success = "All dependencies installed"
 
     match (steam_client, steam_cmd):
@@ -18,3 +18,20 @@ def dependencies():
             - Steamcmd
             - Steam client (steam)
             """
+
+
+def check_directory(path):
+    p = pathlib.Path(path).expanduser()
+    if not p.is_dir():
+        return f"Path not found: {path}"
+    if not os.access(p, os.W_OK):
+        return f"Can't write in {path}"
+    return "Path found, write permission confirmed."
+
+
+def check_connectivity():
+    steam = "https://store.steampowered.com"
+    is_online = requests.get(steam)
+    return (
+        "Connection successful" if is_online else "Failed to connect to steam servers"
+    )
