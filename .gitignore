@@ -1,0 +1,4 @@
+*.code-workspace
+.ideas
+*.pyc
+__pycache__/
